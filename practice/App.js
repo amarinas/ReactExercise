@@ -16,7 +16,10 @@ class App extends React.Component {
       this.setState(prevState =>
         const updatedItems = prevState.items.map(item =>
           if (item.id === id){
-            item.completed = !item.completed
+            return {
+              ...item,
+              completed: !item.completed
+            }
           }
         return item
       })
